@@ -1,0 +1,30 @@
+- if notice
+  .alert.alert-success
+    =notice
+
+- if flash[:error]
+  .alert.alert-danger
+    = flash[:error]
+
+- if @user && @user.errors.any?
+  .alert.alert-danger
+    %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+    %ul
+      - @user.errors.full_messages.each do |msg|
+        %li= msg
+
+- if @timelog && @timelog.errors.any?
+  .alert.alert-danger
+    %h2= "#{pluralize(@timelog.errors.count, "error")} prohibited this user from being saved:"
+    %ul
+      - @timelog.errors.full_messages.each do |msg|
+        %li= msg
+
+.row
+  .col-sm-6
+    .panel.panel-default
+      .panel-body
+        =link_to "Create new User", new_users_path, class: "btn btn-primary"
+        %hr
+        = form_for(@timelog, class: "form-inline") do |f|
+          = text_field_tag "username", nil, class: "form-control", placeholder: "User name to log in", required: true
