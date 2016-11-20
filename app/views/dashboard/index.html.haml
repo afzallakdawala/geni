@@ -1,5 +1,10 @@
 %h1 Dashboard
 
+.alert.alert-danger
+  %strong
+    No. of Late User today 
+  %span.badge=@no_of_late_users
+
 %table.table.table-bordered
   %tr
     %td Name
@@ -11,3 +16,6 @@
       %td=timelog.user.name
       %td=timelog.login_time.strftime("%H:%M")
       %td=timelog.login_time.strftime("%d-%b-%y")
+
+
+= will_paginate @timelogs

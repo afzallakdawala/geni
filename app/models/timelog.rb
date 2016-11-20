@@ -3,6 +3,10 @@ class Timelog < ActiveRecord::Base
   validate :validate_per_day
   before_save :mark_is_late_and_login_time
   
+  def self.nos_of_late_users_today
+    where("DATE(created_at) = ?", Date.today).count
+  end
+
   private
   def mark_is_late_and_login_time
     t = Time.now
