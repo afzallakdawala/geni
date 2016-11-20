@@ -8,7 +8,7 @@ class Timelog < ActiveRecord::Base
   end
 
   def self.user_stats(user_id)
-    {avg_time: Timelog.select("time(avg(time(strftime('%s',login_time)))) as average_time").where(user_id: user_id).first.average_time}
+    {avg_time: avg_time(self.where(user_id: user_id))}
   end
   def self.avg_time(data)
     times = data.collect {|t| (t.login_time.strftime("%H").to_i * 60) + t.login_time.strftime("%M").to_i}

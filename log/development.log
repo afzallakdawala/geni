@@ -12989,3 +12989,17 @@ Processing by DashboardController#index as HTML
   Rendered dashboard/index.html.haml within layouts/application (8.6ms)
   Rendered layouts/_messages.html.haml (0.1ms)
 Completed 200 OK in 50ms (Views: 29.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/dashboard/user/3" for ::1 at 2016-11-21 02:14:53 +0530
+Processing by DashboardController#user as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTimelog Load (0.1ms)[0m  SELECT "timelogs".* FROM "timelogs" WHERE "timelogs"."user_id" = ?  [["user_id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mTimelog Load (0.2ms)[0m  SELECT count(*) as y, is_late FROM "timelogs" WHERE "timelogs"."user_id" = ? GROUP BY "timelogs"."is_late"  [["user_id", 3]]
+  [1m[36mTimelog Load (0.2ms)[0m  [1mSELECT  "timelogs".* FROM "timelogs" WHERE "timelogs"."user_id" = ? LIMIT 10 OFFSET 0[0m  [["user_id", 3]]
+  Rendered dashboard/_charts.html.haml (0.3ms)
+  Rendered dashboard/user.html.haml within layouts/application (2.3ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 68ms (Views: 22.7ms | ActiveRecord: 1.5ms)
