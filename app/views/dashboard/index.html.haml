@@ -27,3 +27,5 @@
       %td=link_to "Destroy", users_path(timelog.user_id), method: :delete, data: {confirm: "Are you sure?"}
 
 = will_paginate @timelogs
+
+= render partial: "charts"

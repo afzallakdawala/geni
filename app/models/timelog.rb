@@ -18,6 +18,24 @@ class Timelog < ActiveRecord::Base
     {nos_of_late_users_today: nos_of_late_users_today, avg_time: avg_time}
   end
 
+  def self.chart_data(user_id = nil)
+    if user_id
+      data = select("count(*) as y, is_late").where(user_id: user_id).group(:is_late)
+    else
+      data = select("count(*) as y, is_late").group(:is_late)
+    end
+    format_data(data)
+  end
+
+  def self.format_data(data)
+    _data = []
+    data.each do |d|
+      _data << {name: "On time", y: d.y} unless d.is_late
+      _data << {name: "Late", y: d.y} if d.is_late
+    end
+    _data
+  end
+
   private
   def mark_is_late_and_login_time
     t = Time.now
