@@ -10,12 +10,20 @@ class Timelog < ActiveRecord::Base
   def self.user_stats(user_id)
     {avg_time: Timelog.select("time(avg(time(strftime('%s',login_time)))) as average_time").where(user_id: user_id).first.average_time}
   end
-  def self.avg_time
-    Timelog.select("time(avg(time(strftime('%s',login_time)))) as average_time").first.average_time
+  def self.avg_time(data)
+    times = data.collect {|t| (t.login_time.strftime("%H").to_i * 60) + t.login_time.strftime("%M").to_i}
+    hours = ((times.sum/times.length)/60)
+    minutes = ((times.sum/times.length)/60.0)
+    minutes = (((minutes-hours)*60)).round
+    "#{hours}:#{minutes.to_s.rjust(2, '0')}"
   end
 
   def self.stats
-    {nos_of_late_users_today: nos_of_late_users_today, avg_time: avg_time}
+    {nos_of_late_users_today: nos_of_late_users_today, avg_time: avg_time_for_all_users}
+  end
+
+  def self.avg_time_for_all_users
+    avg_time(Timelog.where(login_time: Date.today.beginning_of_day..Date.today.end_of_day))
   end
 
   def self.chart_data(user_id = nil)
