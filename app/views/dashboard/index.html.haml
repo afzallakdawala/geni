@@ -1,0 +1,13 @@
+%h1 Dashboard
+
+%table.table.table-bordered
+  %tr
+    %td Name
+    %td Arrival Time
+    %td Date
+
+  -@timelogs.each do |timelog|
+    %tr
+      %td=timelog.user.name
+      %td=timelog.login_time.strftime("%H:%M")
+      %td=timelog.login_time.strftime("%d-%b-%y")
