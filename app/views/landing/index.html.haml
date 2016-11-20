@@ -6,18 +6,12 @@
   .alert.alert-danger
     = flash[:error]
 
-- if @user && @user.errors.any?
+-[@user, @timelog].each do |data|
+  - next unless data && data.errors.any?
   .alert.alert-danger
-    %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+    %h2= "#{pluralize(data.errors.count, "error")} prohibited this user from being saved:"
     %ul
-      - @user.errors.full_messages.each do |msg|
-        %li= msg
-
-- if @timelog && @timelog.errors.any?
-  .alert.alert-danger
-    %h2= "#{pluralize(@timelog.errors.count, "error")} prohibited this user from being saved:"
-    %ul
-      - @timelog.errors.full_messages.each do |msg|
+      - data.errors.full_messages.each do |msg|
         %li= msg
 
 .row
