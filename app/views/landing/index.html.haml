@@ -3,6 +3,11 @@
     .panel.panel-default
       .panel-body
         =link_to "Create new User", new_users_path, class: "btn btn-primary"
+        - if current_admin_user
+          = link_to "Admin Logout", destroy_admin_user_session_path, class: "btn btn-danger pull-right", method: :delete
+          /= link_to "Dashboard", dashboard_path, class: "btn btn-warning pull-right"
+        -else    
+          = link_to "Admin Login", new_admin_user_session_path, class: "btn btn-info pull-right"
         %hr
         = form_for(@timelog, class: "form-inline") do |f|
           = text_field_tag "username", nil, class: "form-control", placeholder: "User name to log in", required: true
