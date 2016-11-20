@@ -12508,3 +12508,130 @@ Processing by DashboardController#index as HTML
   Rendered dashboard/index.html.haml within layouts/application (7.9ms)
   Rendered layouts/_messages.html.haml (0.1ms)
 Completed 200 OK in 30ms (Views: 24.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/dashboard" for ::1 at 2016-11-20 23:18:55 +0530
+Processing by DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "timelogs" WHERE (DATE(created_at) = '2016-11-20') AND "timelogs"."is_late" = ?  [["is_late", "t"]]
+  [1m[36mTimelog Load (0.2ms)[0m  [1mSELECT  time(avg(time(strftime('%s',login_time)))) as average_time FROM "timelogs"  ORDER BY "timelogs"."id" ASC LIMIT 1[0m
+  [1m[35mTimelog Load (0.1ms)[0m  SELECT count(*) as y, is_late FROM "timelogs" GROUP BY "timelogs"."is_late"
+  [1m[36mTimelog Load (0.2ms)[0m  [1mSELECT  *, users.name as username FROM "timelogs" INNER JOIN "users" ON "users"."id" = "timelogs"."user_id"  ORDER BY users.name asc, login_time desc LIMIT 10 OFFSET 0[0m
+  Rendered dashboard/_charts.html.haml (0.3ms)
+  Rendered dashboard/index.html.haml within layouts/application (4.2ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 29ms (Views: 23.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/dashboard.self-428de5fcaa76125eca3929ff6948eee85b16c4c98787bb3e68f694775a5e2ea3.js?body=1" for ::1 at 2016-11-20 23:27:58 +0530
+
+
+Started GET "/dashboard" for ::1 at 2016-11-20 23:27:59 +0530
+Processing by DashboardController#index as HTML
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "timelogs" WHERE (DATE(created_at) = '2016-11-20') AND "timelogs"."is_late" = ?[0m  [["is_late", "t"]]
+  [1m[35mTimelog Load (0.4ms)[0m  SELECT  time(avg(time(strftime('%s',login_time)))) as average_time FROM "timelogs"  ORDER BY "timelogs"."id" ASC LIMIT 1
+  [1m[36mTimelog Load (0.2ms)[0m  [1mSELECT count(*) as y, is_late FROM "timelogs" GROUP BY "timelogs"."is_late"[0m
+  [1m[35mTimelog Load (0.7ms)[0m  SELECT  *, users.name as username FROM "timelogs" INNER JOIN "users" ON "users"."id" = "timelogs"."user_id"  ORDER BY users.name asc, login_time desc LIMIT 10 OFFSET 0
+  Rendered dashboard/_charts.html.haml (0.4ms)
+  Rendered dashboard/index.html.haml within layouts/application (8.6ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 57ms (Views: 50.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2016-11-20 23:28:04 +0530
+Processing by LandingController#index as HTML
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered landing/index.html.haml within layouts/application (2.7ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 30ms (Views: 27.9ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/admin_users/sign_out" for ::1 at 2016-11-20 23:28:06 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"vKnP6uOg20RxrTlT56Ph6coxVR9xhgvfKJED63QXMvP75jm8U3Ae1XygGpO5YkmmxbJCyuG5chZEE1eNh8bn0A=="}
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-11-20 23:28:06 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (1.0ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin_users/sign_in" for ::1 at 2016-11-20 23:30:32 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/devise-3.5.1/app/views/devise/shared/_links.html.erb (10.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/devise-3.5.1/app/views/devise/sessions/new.html.erb within layouts/application (19.0ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 50ms (Views: 48.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin_users/sign_in" for ::1 at 2016-11-20 23:30:34 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9Rtd4zmEGJ61g7A2A6OdYXNXmANMkp+TLrMe0hfWUBc+dn7POQwGZjamIrU+gprqD8QI6AmftP0kIFQb0GWJng==", "admin_user"=>{"email"=>"afzal@embibe.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["email", "afzal@embibe.com"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "admin_users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "admin_users"."id" = ?[0m  [["last_sign_in_at", "2016-11-20 17:23:25.876878"], ["current_sign_in_at", "2016-11-20 18:00:34.189348"], ["sign_in_count", 4], ["updated_at", "2016-11-20 18:00:34.190024"], ["id", 1]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 82ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-20 23:30:34 +0530
+Processing by LandingController#index as HTML
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered landing/index.html.haml within layouts/application (1.7ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 48ms (Views: 47.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/dashboard" for ::1 at 2016-11-20 23:30:36 +0530
+Processing by DashboardController#index as HTML
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "timelogs" WHERE (DATE(created_at) = '2016-11-20') AND "timelogs"."is_late" = ?[0m  [["is_late", "t"]]
+  [1m[35mTimelog Load (0.3ms)[0m  SELECT  time(avg(time(strftime('%s',login_time)))) as average_time FROM "timelogs"  ORDER BY "timelogs"."id" ASC LIMIT 1
+  [1m[36mTimelog Load (0.2ms)[0m  [1mSELECT count(*) as y, is_late FROM "timelogs" GROUP BY "timelogs"."is_late"[0m
+  [1m[35mTimelog Load (0.4ms)[0m  SELECT  *, users.name as username FROM "timelogs" INNER JOIN "users" ON "users"."id" = "timelogs"."user_id"  ORDER BY users.name asc, login_time desc LIMIT 10 OFFSET 0
+  Rendered dashboard/_charts.html.haml (0.9ms)
+  Rendered dashboard/index.html.haml within layouts/application (12.8ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 65ms (Views: 59.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2016-11-20 23:32:06 +0530
+Processing by LandingController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered landing/index.html.haml within layouts/application (2.8ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 37ms (Views: 35.7ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/admin_users/sign_out" for ::1 at 2016-11-20 23:32:07 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"3FhCF/jniPGejOpWf+KBq2P2YD3J+ZJPaSopMD52cV/I87u4+jYLB0hkpUmgpATa2a5RSVtb++lgNJtbvZ2upQ=="}
+  [1m[35mAdminUser Load (0.3ms)[0m  SELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?  ORDER BY "admin_users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-20 23:32:07 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (1.1ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 29ms (Views: 28.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin_users/sign_in" for ::1 at 2016-11-20 23:32:08 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/devise-3.5.1/app/views/devise/shared/_links.html.erb (5.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/devise-3.5.1/app/views/devise/sessions/new.html.erb within layouts/application (13.1ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 53ms (Views: 51.6ms | ActiveRecord: 0.0ms)
