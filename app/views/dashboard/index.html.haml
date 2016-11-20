@@ -1,6 +1,6 @@
 %h1 Dashboard
 
-.alert.alert-danger
+.alert.alert-warning
   %strong
     No. of Late User today 
   %span.badge=@no_of_late_users
@@ -12,10 +12,10 @@
     %td Date
 
   -@timelogs.each do |timelog|
-    %tr
-      %td=timelog.user.name
-      %td=timelog.login_time.strftime("%H:%M")
-      %td=timelog.login_time.strftime("%d-%b-%y")
+    %tr{class: "#{(timelog.is_late) ? 'danger' : ''}"}
+      %td=timelog.username
+      %td=timelog.login_time.localtime.strftime("%H:%M")
+      %td=timelog.login_time.localtime.strftime("%d-%b-%y")
 
 
 = will_paginate @timelogs
