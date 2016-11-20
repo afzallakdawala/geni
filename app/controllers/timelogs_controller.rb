@@ -16,6 +16,7 @@ class TimelogsController < ApplicationController
         format.html { redirect_to :back}
         format.json { render :show, status: :created, location: @timelog }
       else
+        base_error
         format.html { redirect_to :back}
         format.json { render json: @timelog.errors, status: :unprocessable_entity }
       end
@@ -46,5 +47,10 @@ class TimelogsController < ApplicationController
       else
         flash[:notice] = "Wow you are on time."
       end
+    end
+
+    def base_error
+      error = @timelog.errors
+      flash[:error] = error[:base].first if error && error[:base]
     end
 end
