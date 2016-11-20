@@ -12,10 +12,11 @@ class TimelogsController < ApplicationController
     @timelog = @user.timelogs.build(timelog_params)
     respond_to do |format|
       if @timelog.save
-        format.html { render 'landing/index', notice: 'Timelog was successfully created.' }
+        flash_error
+        format.html { redirect_to :back}
         format.json { render :show, status: :created, location: @timelog }
       else
-        format.html { render 'landing/index', notice: "Timelog failed to created" }
+        format.html { redirect_to :back}
         format.json { render json: @timelog.errors, status: :unprocessable_entity }
       end
     end
@@ -37,5 +38,13 @@ class TimelogsController < ApplicationController
       return true if @user
       flash[:error] = "User Not found"
       redirect_to :back
+    end
+
+    def flash_error
+      if @timelog.is_late
+        flash[:error] = "Hey you are late."
+      else
+        flash[:notice] = "Wow you are on time."
+      end
     end
 end
