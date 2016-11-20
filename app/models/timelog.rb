@@ -4,7 +4,7 @@ class Timelog < ActiveRecord::Base
 
   private
   def mark_is_late
-    #self.is_late = 
+    self.is_late = self.login_time.strftime("%H%M").to_i <= 1000
   end
-
+  
 end
