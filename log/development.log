@@ -4096,3 +4096,245 @@ Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.0ms)
 
 
 Started GET "/assets/bootstrap.min.css.map" for ::1 at 2016-11-20 17:17:58 +0530
+
+
+Started GET "/users/new" for ::1 at 2016-11-20 17:26:48 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.haml (5.8ms)
+  Rendered users/new.html.haml within layouts/application (11.3ms)
+Completed 200 OK in 283ms (Views: 260.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for ::1 at 2016-11-20 17:26:50 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VZp0X34+/gmhIzo6qG7hYjYWgiPhjD+KOPOLYTQCUW4S1YIJzu47mKwuGfr2r0ktOZWV9nGzRkNUcd8Hx9OETQ==", "user"=>{"name"=>"af"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'af' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 28ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-11-20 17:26:50 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.css.map" for ::1 at 2016-11-20 17:26:50 +0530
+
+
+Started GET "/" for ::1 at 2016-11-20 17:27:54 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Missing partial landing/_messages, application/_messages with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :haml, :jbuilder]}. Searched in:
+  * "/Users/Afzal/Documents/work/rnd/geni/app/views"
+  * "/Users/Afzal/.rvm/gems/ruby-2.1.5/gems/devise-3.5.1/app/views"
+):
+     8:     = csrf_meta_tags
+     9:   %body
+    10:     .container
+    11:       = render partial: "messages"
+    12:       = yield
+  app/views/layouts/application.html.haml:11:in `_app_views_layouts_application_html_haml__2370450765571302236_70251991485200'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (24.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (19.1ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (40.1ms)
+
+
+Started GET "/" for ::1 at 2016-11-20 17:28:05 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (1.0ms)
+  Rendered layouts/_messages.html.haml (2.6ms)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.self-511807f34f490c5d04f397a2ad4fc4a9135fcb5300f3dd5cb88f1cf678357cf3.css?body=1" for ::1 at 2016-11-20 17:28:05 +0530
+
+
+Started GET "/assets/landing.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-11-20 17:28:05 +0530
+
+
+Started GET "/assets/scaffolds.self-32f2b0321ef49c20c99e11dc3779b6820bb47adbe07eab4eed9fe2a221446c5e.css?body=1" for ::1 at 2016-11-20 17:28:05 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-11-20 17:28:05 +0530
+
+
+Started GET "/assets/timelogs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-11-20 17:28:05 +0530
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-11-20 17:28:05 +0530
+
+
+Started GET "/assets/timelogs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-11-20 17:28:05 +0530
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-11-20 17:28:05 +0530
+
+
+Started GET "/assets/bootstrap.min.self-504d59678f10d79a661b6cecdce5b8c1d5bfd98e860614584c0a40399552d61f.js?body=1" for ::1 at 2016-11-20 17:28:05 +0530
+
+
+Started GET "/assets/landing.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-11-20 17:28:05 +0530
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-11-20 17:28:05 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-11-20 17:28:05 +0530
+
+
+Started GET "/assets/bootstrap.min.css.map" for ::1 at 2016-11-20 17:28:06 +0530
+
+
+Started GET "/" for ::1 at 2016-11-20 17:28:09 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (0.7ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.css.map" for ::1 at 2016-11-20 17:28:10 +0530
+
+
+Started GET "/users/new" for ::1 at 2016-11-20 17:28:11 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.haml (0.8ms)
+  Rendered users/new.html.haml within layouts/application (2.0ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-11-20 17:28:13 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A5q5xFTzyfGxtwNFrwjQ1mmV7Z0e+ktakFCkZrqT5kVE1U+S5CMMYLy6IIXxyXiZZhb6SI7FMpP80vAASUIzZg==", "user"=>{"name"=>"afzal"}, "commit"=>"Save"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'afzal' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-20 17:28:13 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (1.0ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 27ms (Views: 26.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.css.map" for ::1 at 2016-11-20 17:28:14 +0530
+
+
+Started POST "/timelogs" for ::1 at 2016-11-20 17:28:16 +0530
+Processing by TimelogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tWLi9BBiER1oQ9/lDWMPndrEUw75C1cQcDNcxaBVszryLRSioLLUjGVO/CVToqfS1UdE22k0LtkcsQijU4RmGQ==", "username"=>"afzal"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "afzal"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "timelogs" WHERE "timelogs"."user_id" = ? AND (DATE(created_at) = '2016-11-20')  [["user_id", 3]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 28ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-20 17:28:16 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (0.8ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.css.map" for ::1 at 2016-11-20 17:28:17 +0530
+
+
+Started GET "/users/new" for ::1 at 2016-11-20 17:28:18 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.haml (0.8ms)
+  Rendered users/new.html.haml within layouts/application (1.5ms)
+  Rendered layouts/_messages.html.haml (0.3ms)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-11-20 17:28:20 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CP/aqgm4OTU3JpFNTazKDstJz5nBo9jmfvqshlrz2YhPsCz8uWj8pDorso0TbWJBxMrYTFGcoS8SePjgqSIMqw==", "user"=>{"name"=>"afzal#"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'afzal#' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-11-20 17:28:20 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (0.8ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 18ms (Views: 17.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.css.map" for ::1 at 2016-11-20 17:28:21 +0530
+
+
+Started GET "/users/new" for ::1 at 2016-11-20 17:28:22 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.haml (1.0ms)
+  Rendered users/new.html.haml within layouts/application (1.7ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 36ms (Views: 34.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-11-20 17:28:26 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E+B+sIWLIGnDVtLsxGhyCwNQ41NFBtUwypheS7izQGVUr4jmNVvl+M5b8SyaqdpEDNP0htU5rPmmGgotS2KVRg==", "user"=>{"name"=>"afz"}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'afz' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "afz"], ["created_at", "2016-11-20 11:58:26.434619"], ["updated_at", "2016-11-20 11:58:26.434619"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2016-11-20 17:28:26 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (0.7ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.css.map" for ::1 at 2016-11-20 17:28:26 +0530
+
+
+Started POST "/timelogs" for ::1 at 2016-11-20 17:28:29 +0530
+Processing by TimelogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BQ070TziHTidCwRwK+HUpRSYf5tT9mlTwkXai2eCL3NCQs2HjDLYqZAGJ7B1IHzqGxtoTsPJEJqux47tlFP6UA==", "username"=>"afz"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "afz"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "timelogs" WHERE "timelogs"."user_id" = ? AND (DATE(created_at) = '2016-11-20')[0m  [["user_id", 18]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "timelogs" ("user_id", "is_late", "login_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 18], ["is_late", "t"], ["login_time", "2016-11-20 11:58:29.949252"], ["created_at", "2016-11-20 11:58:29.949434"], ["updated_at", "2016-11-20 11:58:29.949434"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2016-11-20 17:28:29 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (0.7ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.css.map" for ::1 at 2016-11-20 17:28:30 +0530
