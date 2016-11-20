@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :init_timelog
+  before_action :authenticate_admin_user!, only: [:destroy]
+
   # GET /users/new
   def new
     @user = User.new
@@ -17,6 +19,16 @@ class UsersController < ApplicationController
         format.html { redirect_to root_url, flash: {error: @user.errors.full_messages.join(', ')}}
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def destroy
+    @user = User.find_by(id:params[:format])
+    if @user.destroy
+      redirect_to dashboard_path, notice: 'User was successfully deleted.'
+    else
+      redirect_to dashboard_path, notice: "No user found"
+      render json: @user.errors, status: :unprocessable_entity 
     end
   end
 
