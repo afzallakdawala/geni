@@ -1,0 +1,2286 @@
+
+
+Started GET "/" for ::1 at 2016-11-19 20:35:38 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 41ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'landing/index'` to `controller: 'landing/index'`. (called from block in <top (required)> at /Users/Afzal/Documents/work/rnd/geni/config/routes.rb:2)
+
+
+Started GET "/" for ::1 at 2016-11-19 20:39:17 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (3.4ms)
+Completed 200 OK in 1361ms (Views: 1350.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-11-19 20:39:18 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-11-19 20:39:18 +0530
+  [1m[36m (1.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20161119151014)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.7ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_name" ON "users" ("name")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161119151014"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_name' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_name' AND type='index'
+[0m
+
+
+Started GET "/" for ::1 at 2016-11-19 20:42:05 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (1.6ms)
+Completed 200 OK in 37ms (Views: 34.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 20:42:25 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 40ms (Views: 38.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 20:44:38 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (3.1ms)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 20:44:52 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (3.5ms)
+Completed 200 OK in 51ms (Views: 48.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2016-11-19 20:45:16 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.haml (9.2ms)
+  Rendered users/new.html.haml within layouts/application (17.6ms)
+Completed 200 OK in 101ms (Views: 74.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/new" for ::1 at 2016-11-19 20:48:29 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.haml (1.2ms)
+  Rendered users/new.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 46ms (Views: 36.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/new" for ::1 at 2016-11-19 20:50:53 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.haml (6.1ms)
+  Rendered users/new.html.haml within layouts/application (9.1ms)
+Completed 200 OK in 41ms (Views: 39.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 20:51:44 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xtkVJS0ibDo5KV0e7jlxRk/yTvk8AvRI8AhQEqHXe2aBluNznfKpqzQkft6w+NkJQHFZLKw9jYGcigR0UgauRQ==", "user"=>{"name"=>""}, "commit"=>"Save"}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+ArgumentError (Unknown validator: 'PresentValidator'):
+  app/models/user.rb:3:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:11:in `create'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.2ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (39.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (70.6ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 20:52:01 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xtkVJS0ibDo5KV0e7jlxRk/yTvk8AvRI8AhQEqHXe2aBluNznfKpqzQkft6w+NkJQHFZLKw9jYGcigR0UgauRQ==", "user"=>{"name"=>""}, "commit"=>"Save"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+ArgumentError (Unknown validator: 'PresentsValidator'):
+  app/models/user.rb:3:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:11:in `create'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (27.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (46.6ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 20:52:42 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xtkVJS0ibDo5KV0e7jlxRk/yTvk8AvRI8AhQEqHXe2aBluNznfKpqzQkft6w+NkJQHFZLKw9jYGcigR0UgauRQ==", "user"=>{"name"=>""}, "commit"=>"Save"}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+ArgumentError (Unknown validator: 'UniquenesValidator'):
+  app/models/user.rb:3:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:11:in `create'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (22.1ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (53.3ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 20:52:50 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xtkVJS0ibDo5KV0e7jlxRk/yTvk8AvRI8AhQEqHXe2aBluNznfKpqzQkft6w+NkJQHFZLKw9jYGcigR0UgauRQ==", "user"=>{"name"=>""}, "commit"=>"Save"}
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.8ms)
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/users_controller.rb:11:in `create'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (21.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (40.8ms)
+
+
+Started PUT "/__web_console/repl_sessions/0aeede075890a49a7e8e32ace979b214" for ::1 at 2016-11-19 20:53:03 +0530
+
+
+Started POST "/users" for ::1 at 2016-11-19 20:53:26 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xtkVJS0ibDo5KV0e7jlxRk/yTvk8AvRI8AhQEqHXe2aBluNznfKpqzQkft6w+NkJQHFZLKw9jYGcigR0UgauRQ==", "user"=>{"name"=>""}, "commit"=>"Save"}
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = '' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered users/_form.html.haml (3.4ms)
+  Rendered users/new.html.haml within layouts/application (5.6ms)
+Completed 200 OK in 94ms (Views: 56.4ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 20:54:45 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W5wU8JvAC6Z6SjVG/hDe+8jgZjHWYesMCNgEOjPHoYcc0+KmKxDON3dHFoag0Xa0x2Nx5EZeksVkWlBcwBZ0pA==", "user"=>{"name"=>"afzal9"}, "commit"=>"Save"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+ArgumentError (The provided regular expression is using multiline anchors (^ or $), which may present a security risk. Did you mean to use \A and \z, or forgot to add the :multiline => true option?):
+  app/models/user.rb:3:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:11:in `create'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.0ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (45.5ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 20:55:13 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W5wU8JvAC6Z6SjVG/hDe+8jgZjHWYesMCNgEOjPHoYcc0+KmKxDON3dHFoag0Xa0x2Nx5EZeksVkWlBcwBZ0pA==", "user"=>{"name"=>"afzal9"}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (1.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'afzal9' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  Rendered users/_form.html.haml (6.7ms)
+  Rendered users/new.html.haml within layouts/application (8.8ms)
+Completed 200 OK in 61ms (Views: 43.7ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 20:55:21 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4dIBZFhPOhH7RHu6Z9Y8gqPRZshqvxpXyAQ2k5SERBGmnfcy6J//gPZJWHo5F5TNrFJxHfqAY56khmL1Z1WRMg==", "user"=>{"name"=>"afzal dd"}, "commit"=>"Save"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'afzal dd' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered users/_form.html.haml (2.1ms)
+  Rendered users/new.html.haml within layouts/application (3.1ms)
+Completed 200 OK in 32ms (Views: 25.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 20:55:24 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TWtWvozEmPF9umWbzI93ny1ER0ECqKDTb9wDP5IXCQkKJKDoPBRdYHC3RluSTt/QIsdQlJKX2RoDXldZYcbcKg==", "user"=>{"name"=>"afzal"}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'afzal' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered users/_form.html.haml (3.2ms)
+  Rendered users/new.html.haml within layouts/application (5.3ms)
+Completed 200 OK in 32ms (Views: 26.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 20:55:28 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NZKBmioIowuz8iFM8rhtruNRngyd2tTU5pSiuTLtsbNy3XfMmthmmr7/AoysecXh7NKJ2Q3lrR2KFvbfwTxkkA==", "user"=>{"name"=>"afzal"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'afzal' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered users/_form.html.haml (3.0ms)
+  Rendered users/new.html.haml within layouts/application (5.7ms)
+Completed 200 OK in 33ms (Views: 27.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2016-11-19 20:56:15 +0530
+Processing by UsersController#show as HTML
+  Rendered users/show.html.haml within layouts/application (23.2ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `edit_user_path' for #<#<Class:0x007fab4febbf98>:0x007fab4ddb72e8>):
+    1: %p#notice= notice
+    2: 
+    3: 
+    4: = link_to 'Edit', edit_user_path(@user)
+    5: \|
+    6: = link_to 'Back', users_path
+  app/views/users/show.html.haml:4:in `_app_views_users_show_html_haml___1518267083716815756_70186861178740'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (21.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.2ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (44.5ms)
+
+
+Started GET "/users/new" for ::1 at 2016-11-19 20:56:23 +0530
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+ArgumentError (The provided regular expression is using multiline anchors (^ or $), which may present a security risk. Did you mean to use \A and \z, or forgot to add the :multiline => true option?):
+  app/models/user.rb:3:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:5:in `new'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.1ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.0ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (40.2ms)
+
+
+Started GET "/users/new" for ::1 at 2016-11-19 20:56:27 +0530
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+ArgumentError (The provided regular expression is using multiline anchors (^ or $), which may present a security risk. Did you mean to use \A and \z, or forgot to add the :multiline => true option?):
+  app/models/user.rb:3:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:5:in `new'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (18.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (42.9ms)
+
+
+Started GET "/users/new" for ::1 at 2016-11-19 20:57:00 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.haml (2.1ms)
+  Rendered users/new.html.haml within layouts/application (3.7ms)
+Completed 200 OK in 48ms (Views: 36.6ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 20:57:07 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BVyzl3j75s4bz50eESgSfKKktIY51iBbfPkY5n1lLO5CE0XByCsjXxbCvt5P6bozrSejU6npWZIQe0yAjrT5zQ==", "user"=>{"name"=>"tt"}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'tt' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  Rendered users/_form.html.haml (4.2ms)
+  Rendered users/new.html.haml within layouts/application (5.9ms)
+Completed 200 OK in 49ms (Views: 41.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for ::1 at 2016-11-19 20:57:23 +0530
+Processing by UsersController#show as HTML
+  Rendered users/show.html.haml within layouts/application (26.8ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `edit_user_path' for #<#<Class:0x007fab4fc6af28>:0x007fab4fc33230>):
+    1: %p#notice= notice
+    2: 
+    3: 
+    4: = link_to 'Edit', edit_user_path(@user)
+    5: \|
+    6: = link_to 'Back', users_path
+  app/views/users/show.html.haml:4:in `_app_views_users_show_html_haml___1518267083716815756_70186861178740'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.1ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (19.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (44.9ms)
+
+
+Started GET "/users/new" for ::1 at 2016-11-19 20:57:29 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.haml (2.2ms)
+  Rendered users/new.html.haml within layouts/application (4.4ms)
+Completed 200 OK in 54ms (Views: 37.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 20:57:32 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kMvUierKcgcX3wH709jaLRH2adOmwkRDvhfw1225zh3XhCLfWhq3lhrSIjuNGXJiHnV+Bjb9PYrSlaSxnmgbPg==", "user"=>{"name"=>"tt"}, "commit"=>"Save"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'tt' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  Rendered users/_form.html.haml (1.7ms)
+  Rendered users/new.html.haml within layouts/application (2.7ms)
+Completed 200 OK in 39ms (Views: 25.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 20:57:42 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zzO+4Au3Gw2Fn6Nvwyd3UqYu+alpiXnJL3l1WhIQXoqIfEi2u2fenIiSgK+d5t8dqa3ufPm2AABD+yE84cGLqQ==", "user"=>{"name"=>"afzalll askdjflajs"}, "commit"=>"Save"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'afzalll askdjflajs' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  Rendered users/_form.html.haml (2.5ms)
+  Rendered users/new.html.haml within layouts/application (4.5ms)
+Completed 200 OK in 43ms (Views: 32.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 20:57:46 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Fhs0j+8odRFdYn2BcyM519rBgTYf3a2N9A5J/U0u0shRVMLZX/iwgFBvXkEt4pGY1UKW44/i1ESYjB2bvv8H6w==", "user"=>{"name"=>"afzalll9"}, "commit"=>"Save"}
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'afzalll9' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  Rendered users/_form.html.haml (2.0ms)
+  Rendered users/new.html.haml within layouts/application (3.6ms)
+Completed 200 OK in 75ms (Views: 64.9ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 20:57:50 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"94H1xD0UfHnwzthMw57IDfr9DUB+rIv0pXuumDAev5WwzgOSjcS56P3D+4ydX2BC9X4ale6T8j3J+fr+w89qtg==", "user"=>{"name"=>"afzal1"}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'afzal1' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  Rendered users/_form.html.haml (4.4ms)
+  Rendered users/new.html.haml within layouts/application (7.7ms)
+Completed 200 OK in 35ms (Views: 29.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 20:59:17 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6cwQQAy68GyRXlURWGVTQgniN/O024NnJNWQ1UF/0Faug+YWvGo1/ZxTdtEGpPsNBmEgJiTk+q5IV8Szsq4FdQ==", "user"=>{"name"=>"afzal1"}, "commit"=>"Save"}
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'afzal1' LIMIT 1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "afzal1"], ["created_at", "2016-11-19 15:29:17.379145"], ["updated_at", "2016-11-19 15:29:17.379145"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 3.6ms)
+
+NoMethodError (undefined method `user_url' for #<UsersController:0x007fab4df7fa08>):
+  app/controllers/users_controller.rb:14:in `block (2 levels) in create'
+  app/controllers/users_controller.rb:12:in `create'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (24.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (49.0ms)
+
+
+Started GET "/users/new" for ::1 at 2016-11-19 20:59:27 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.haml (1.9ms)
+  Rendered users/new.html.haml within layouts/application (7.7ms)
+Completed 200 OK in 59ms (Views: 56.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 20:59:32 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WCZqDTyS1k4Oua0eJ0WjaRPHLB+oWsGJjbKgIpXRCbofaZxbjEIT3wO0jt55hAsmHEQ7yjhluEDhMPREZgDcmQ==", "user"=>{"name"=>"afzal9"}, "commit"=>"Save"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'afzal9' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "afzal9"], ["created_at", "2016-11-19 15:29:32.921688"], ["updated_at", "2016-11-19 15:29:32.921688"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.4ms)
+
+NoMethodError (undefined method `user_url' for #<UsersController:0x007fab4dfc0558>):
+  app/controllers/users_controller.rb:14:in `block (2 levels) in create'
+  app/controllers/users_controller.rb:12:in `create'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (21.2ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (43.8ms)
+
+
+Started GET "/users/new" for ::1 at 2016-11-19 20:59:37 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.haml (0.9ms)
+  Rendered users/new.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 20:59:46 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEslt+Jw5UN3Ir5StSxfmS92mqQdf7+5ozZzxPUgs8fLBNPhUqAg0novnZLr7ffWIPWNcY1AxnDPtCeiBvFm5A==", "user"=>{"name"=>"afzal9"}, "commit"=>"Save"}
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'afzal9' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered users/_form.html.haml (5.0ms)
+  Rendered users/new.html.haml within layouts/application (7.0ms)
+Completed 200 OK in 63ms (Views: 42.4ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 20:59:53 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uLxRsOuy2XhSrfEGf5OJOBwTZyhsPsqT1dve30Bq2hL/86fmW2Ic6V+g0sYhUiF3E5Bw/fwBs1q5WYq5s7sPMQ==", "user"=>{"name"=>"afzal afasfs"}, "commit"=>"Save"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'afzal afasfs' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  Rendered users/_form.html.haml (2.4ms)
+  Rendered users/new.html.haml within layouts/application (4.2ms)
+Completed 200 OK in 86ms (Views: 69.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 20:59:58 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ufKcuiJAtQWcISzgYC7cvduSNxbtodc6V3VZ7OvkhcD+vWrskpBwlJEsDyA+73Ty1BEgw32ervM79w2KGDVQ4w==", "user"=>{"name"=>""}, "commit"=>"Save"}
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = '' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  Rendered users/_form.html.haml (9.0ms)
+  Rendered users/new.html.haml within layouts/application (13.0ms)
+Completed 200 OK in 87ms (Views: 76.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 21:01:51 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5gtYZvH8/yPnhbhyhnQaPqJWC8TTvZTBFBIXeQeVIp6hRK4wQSw6suqIm7LYtbJxrdUcEUOC7Qh4kEMf9ET3vQ==", "user"=>{"name"=>""}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = '' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  Rendered users/_form.html.haml (6.3ms)
+  Rendered users/new.html.haml within layouts/application (8.1ms)
+Completed 200 OK in 57ms (Views: 39.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 21:01:55 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lEETo/sbAFcjBGaN8GC2fPfFQvkgA2zr0mZk7OxNRefTDuX1S8vFxi4JRU2uoR4z+EZVLLA8FSK+5DCKH5yQxA==", "user"=>{"name"=>""}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = '' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered users/_form.html.haml (5.2ms)
+  Rendered users/new.html.haml within layouts/application (8.2ms)
+Completed 200 OK in 38ms (Views: 31.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 21:02:04 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hTHnRyuXFs/PN7JyRjUcu7M6lNjaQsNI5iPL8VX+GPjCfhERm0fTXsI6kbIY9LT0vLmDDUp9uoGKoZ+Xpi/N2w==", "user"=>{"name"=>"afzal"}, "commit"=>"Save"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'afzal' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "afzal"], ["created_at", "2016-11-19 15:32:04.586329"], ["updated_at", "2016-11-19 15:32:04.586329"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 42ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 21:02:04 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (8.4ms)
+Completed 200 OK in 71ms (Views: 65.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2016-11-19 21:02:31 +0530
+Processing by UsersController#show as HTML
+  Rendered users/show.html.haml within layouts/application (21.9ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `edit_user_path' for #<#<Class:0x007fab4dfa1040>:0x007fab4df98a58>):
+    1: %p#notice= notice
+    2: 
+    3: 
+    4: = link_to 'Edit', edit_user_path(@user)
+    5: \|
+    6: = link_to 'Back', users_path
+  app/views/users/show.html.haml:4:in `_app_views_users_show_html_haml___1518267083716815756_70186861178740'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (31.1ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (24.9ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.2ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (52.2ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 21:02:36 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 46ms (Views: 43.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2016-11-19 21:02:37 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.haml (2.2ms)
+  Rendered users/new.html.haml within layouts/application (5.4ms)
+Completed 200 OK in 65ms (Views: 53.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 21:02:39 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OBGixKy3vjWrXWrcKTtreF6aMojCULnBkGvsssIdQC5/XlSSHGd7pKZQSRx3+sM3URklXVJvwAj86bjUMcyVDQ==", "user"=>{"name"=>"afzal"}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'afzal' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 15ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 21:02:39 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (0.4ms)
+Completed 200 OK in 26ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 21:03:18 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 34ms (Views: 32.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2016-11-19 21:03:20 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.haml (5.3ms)
+  Rendered users/new.html.haml within layouts/application (7.0ms)
+Completed 200 OK in 84ms (Views: 68.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 21:03:23 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A8g77aSNgBW1IBgzegmrpBUe1D19CFkUEG5dFcSABshEh827FF1FhLgtO/MkyAPrGp3D6O03IN187AlzN1HT6w==", "user"=>{"name"=>"afzal"}, "commit"=>"Save"}
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36mUser Exists (1.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'afzal' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  Rendered landing/index.html.haml within layouts/application (4.5ms)
+Completed 200 OK in 110ms (Views: 82.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users" for ::1 at 2016-11-19 21:04:08 +0530
+Processing by UsersController#show as HTML
+  Rendered users/show.html.haml within layouts/application (24.9ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `edit_user_path' for #<#<Class:0x007fab4c2833f0>:0x007fab520c1e30>):
+    1: %p#notice= notice
+    2: 
+    3: 
+    4: = link_to 'Edit', edit_user_path(@user)
+    5: \|
+    6: = link_to 'Back', users_path
+  app/views/users/show.html.haml:4:in `_app_views_users_show_html_haml___1518267083716815756_70186861178740'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.9ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.2ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (19.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (42.7ms)
+
+
+Started GET "/landing" for ::1 at 2016-11-19 21:04:25 +0530
+
+ActionController::RoutingError (No route matches [GET] "/landing"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Afzal/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Afzal/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Afzal/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.1ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (6.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (51.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (26.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (56.1ms)
+
+
+Started GET "/users/new" for ::1 at 2016-11-19 21:04:39 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.haml (3.3ms)
+  Rendered users/new.html.haml within layouts/application (5.9ms)
+Completed 200 OK in 47ms (Views: 44.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 21:04:41 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/CaJKeYEzBLgfi9ALBAmp1pkM69NoJZ+ae5/zDk9h7i7aX9/VtQJg+1zDIBy0Y7oVecket2f77cFbCuqyuxSmw==", "user"=>{"name"=>""}, "commit"=>"Save"}
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = '' LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  Rendered landing/index.html.haml within layouts/application (5.9ms)
+Completed 200 OK in 53ms (Views: 42.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users" for ::1 at 2016-11-19 21:05:34 +0530
+
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController):
+  actionpack (4.2.5) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `call'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.5) lib/rack/etag.rb:24:in `call'
+  rack (1.6.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.5) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Afzal/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Afzal/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Afzal/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (19.0ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.2ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (43.2ms)
+
+
+Started GET "/users" for ::1 at 2016-11-19 21:05:41 +0530
+
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController):
+  actionpack (4.2.5) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `call'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.5) lib/rack/etag.rb:24:in `call'
+  rack (1.6.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.5) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Afzal/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Afzal/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Afzal/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (22.0ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (48.6ms)
+
+
+Started GET "/users" for ::1 at 2016-11-19 21:05:42 +0530
+
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController):
+  actionpack (4.2.5) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `call'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.5) lib/rack/etag.rb:24:in `call'
+  rack (1.6.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.5) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Afzal/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Afzal/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Afzal/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (1.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (22.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (47.3ms)
+
+
+Started GET "/users" for ::1 at 2016-11-19 21:05:55 +0530
+
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController):
+  actionpack (4.2.5) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `call'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.5) lib/rack/etag.rb:24:in `call'
+  rack (1.6.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.5) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Afzal/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Afzal/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Afzal/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (1.0ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (22.9ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (44.1ms)
+
+
+Started GET "/landing" for ::1 at 2016-11-19 21:06:04 +0530
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'landing/index'` to `controller: 'landing/index'`. (called from block in <top (required)> at /Users/Afzal/Documents/work/rnd/geni/config/routes.rb:2)
+
+ArgumentError (Missing :action key on routes definition, please check your routes.):
+  config/routes.rb:2:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.2ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (40.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (68.5ms)
+
+
+Started GET "/landing" for ::1 at 2016-11-19 21:06:10 +0530
+
+ActionController::RoutingError (No route matches [GET] "/landing"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Afzal/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Afzal/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Afzal/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.0ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (45.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.1ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (23.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (48.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 21:06:17 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (0.4ms)
+Completed 200 OK in 52ms (Views: 49.3ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTimelogs (20161119153745)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTimelogs (20161119153745)
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "timelogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login_time" datetime, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161119153745"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.9ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_name' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_name' AND type='index'
+[0m
+  [1m[36mTimelog Load (0.3ms)[0m  [1mSELECT  "timelogs".* FROM "timelogs"  ORDER BY "timelogs"."id" ASC LIMIT 1[0m
+
+
+Started GET "/" for ::1 at 2016-11-19 21:14:41 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (12.5ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    11:       .panel-body
+    12:         =link_to "Create new User", new_users_path, class: "btn btn-primary"
+    13:         %hr
+    14:         = form_for(@timelog, class: "form-inline") do |f|
+    15:           = f.text_field :name, class: "form-control", placeholder: "Name"
+    16:          
+  app/views/landing/index.html.haml:14:in `_app_views_landing_index_html_haml___789918089824546985_70280927400240'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (34.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (32.2ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (62.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 21:15:06 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (8.4ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 1.4ms)
+
+ActionView::Template::Error (undefined method `name' for #<Timelog:0x007fd71b934500>):
+    12:         =link_to "Create new User", new_users_path, class: "btn btn-primary"
+    13:         %hr
+    14:         = form_for(@timelog, class: "form-inline") do |f|
+    15:           = f.text_field :name, class: "form-control", placeholder: "Name"
+    16:          
+  app/views/landing/index.html.haml:15:in `block in _app_views_landing_index_html_haml___789918089824546985_70280927400240'
+  app/views/landing/index.html.haml:14:in `_app_views_landing_index_html_haml___789918089824546985_70280927400240'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (22.2ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (46.1ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (2.2ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (51.2ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 21:15:41 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (8.6ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `name' for #<Timelog:0x007fd71dd00420>):
+    12:         =link_to "Create new User", new_users_path, class: "btn btn-primary"
+    13:         %hr
+    14:         = form_for(@timelog, class: "form-inline") do |f|
+    15:           = f.text_field "name", class: "form-control", placeholder: "Name"
+    16:          
+  app/views/landing/index.html.haml:15:in `block in _app_views_landing_index_html_haml___789918089824546985_70280947421960'
+  app/views/landing/index.html.haml:14:in `_app_views_landing_index_html_haml___789918089824546985_70280947421960'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.0ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (33.0ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (19.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (43.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 21:15:51 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (8.2ms)
+Completed 200 OK in 673ms (Views: 670.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.self-32f2b0321ef49c20c99e11dc3779b6820bb47adbe07eab4eed9fe2a221446c5e.css?body=1" for ::1 at 2016-11-19 21:15:51 +0530
+
+
+Started GET "/" for ::1 at 2016-11-19 21:16:13 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (5.7ms)
+Completed 200 OK in 35ms (Views: 32.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 21:16:28 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (4.7ms)
+Completed 200 OK in 61ms (Views: 57.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 21:19:27 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (6.6ms)
+Completed 200 OK in 58ms (Views: 44.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 21:19:35 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (4.6ms)
+Completed 200 OK in 54ms (Views: 52.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 21:20:25 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (5.2ms)
+Completed 200 OK in 47ms (Views: 45.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.css.map" for ::1 at 2016-11-19 21:20:30 +0530
+
+
+Started GET "/" for ::1 at 2016-11-19 21:20:47 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 39ms (Views: 32.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/timelogs" for ::1 at 2016-11-19 21:20:49 +0530
+Processing by TimelogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AYcug4mrWDgvG+S2f3nOuA6aCLWlMmAnX8D6EcM/FbpGyNjVOXudqSIWx3YhuGb3ARkfYDUNGe4zQq53MO7AmQ==", "username"=>""}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `sss' for #<TimelogsController:0x007fd71ffc5668>):
+  app/controllers/timelogs_controller.rb:36:in `find_user'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (35.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (24.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (50.2ms)
+
+
+Started PUT "/__web_console/repl_sessions/819acab053f8f390d45ef3ee8df3f22a" for ::1 at 2016-11-19 21:20:53 +0530
+
+
+Started PUT "/__web_console/repl_sessions/819acab053f8f390d45ef3ee8df3f22a" for ::1 at 2016-11-19 21:20:59 +0530
+
+
+Started GET "/" for ::1 at 2016-11-19 21:21:39 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (5.8ms)
+Completed 200 OK in 41ms (Views: 39.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/timelogs" for ::1 at 2016-11-19 21:21:45 +0530
+Processing by TimelogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zGEDa3XEHvIdPwF9kA715gijc6RPYsgjIYftjRyjuAOLLvU9xRTbYxAyIr3Oz12pByBkcd9dsepNBbnr73JtIA==", "username"=>"af"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `sss' for #<TimelogsController:0x007fd71fe849c0>):
+  app/controllers/timelogs_controller.rb:36:in `find_user'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (19.2ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (44.0ms)
+
+
+Started PUT "/__web_console/repl_sessions/6cac1afd017fc4c44f09a60b04bf3c95" for ::1 at 2016-11-19 21:21:49 +0530
+
+
+Started PUT "/__web_console/repl_sessions/6cac1afd017fc4c44f09a60b04bf3c95" for ::1 at 2016-11-19 21:21:55 +0530
+
+
+Started POST "/timelogs" for ::1 at 2016-11-19 21:23:34 +0530
+Processing by TimelogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zGEDa3XEHvIdPwF9kA715gijc6RPYsgjIYftjRyjuAOLLvU9xRTbYxAyIr3Oz12pByBkcd9dsepNBbnr73JtIA==", "username"=>"af"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "af"]]
+Redirected to http://localhost:3000/
+Filter chain halted as :find_user rendered or redirected
+Completed 302 Found in 34ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 21:23:35 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (4.0ms)
+Completed 200 OK in 46ms (Views: 39.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 21:23:41 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (4.1ms)
+Completed 200 OK in 39ms (Views: 37.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/timelogs" for ::1 at 2016-11-19 21:23:50 +0530
+Processing by TimelogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rHKMqYcMTtrPuQ35C1cze8ga4tZIgjpN3UZ1CZlihVbrPXr/N9yLS8K0LjlVlps0x5n1A9i9Q4SxxCFvarNQdQ==", "username"=>"d"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "d"]]
+Redirected to http://localhost:3000/
+Filter chain halted as :find_user rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 21:23:50 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (4.7ms)
+Completed 200 OK in 42ms (Views: 39.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/timelogs" for ::1 at 2016-11-19 21:24:36 +0530
+Processing by TimelogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ym/7pEoNsGC2eZdAklLKWBmhkc2HynifCRC7d0mAS64lIA3y+t118bt0tIDMk2IXFiKGGBf1AVZlku8RulGejQ==", "username"=>"d"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "d"]]
+Redirected to http://localhost:3000/
+Filter chain halted as :find_user rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 21:24:36 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (4.2ms)
+Completed 200 OK in 42ms (Views: 39.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/timelogs" for ::1 at 2016-11-19 21:24:44 +0530
+Processing by TimelogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lsREvSaFgtketipvX2Y5ND3EXbknYocf9bajt9J+OxjRi7LrllVHSBO7Ca8Bp5F7MkdKbLdd/taZNPfRIa/uOw==", "username"=>"ad"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "ad"]]
+Redirected to http://localhost:3000/
+Filter chain halted as :find_user rendered or redirected
+Completed 302 Found in 12ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 21:24:44 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 47ms (Views: 41.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/timelogs" for ::1 at 2016-11-19 21:25:02 +0530
+Processing by TimelogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aB3g3oxu0FNPG4KzA384ih7jJmgGK+VkQVIwyM0FvwIvUhaIPL4VwkIWoXNdvpDFEWAxvZYUnK0t0GSuPtRqIQ==", "username"=>"adasdf"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "adasdf"]]
+Redirected to http://localhost:3000/
+Filter chain halted as :find_user rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 21:25:02 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 45ms (Views: 37.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/timelogs" for ::1 at 2016-11-19 21:25:35 +0530
+Processing by TimelogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9bDZCE8GgB1zYlhVSMpx+NrGlqVcRSNnU5ugdd7TWsey/y9e/9ZFjH5ve5UWC9m31UWBcMx6Wq4/GfQTLQKP5A==", "username"=>"afasfsa"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "afasfsa"]]
+Redirected to http://localhost:3000/
+Filter chain halted as :find_user rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 21:25:35 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (5.4ms)
+Completed 200 OK in 43ms (Views: 40.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/timelogs" for ::1 at 2016-11-19 21:28:05 +0530
+Processing by TimelogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RFlH0TdQGOJDByu3ygrScWtpI3Ygw/UBz9Ta3ynJH6sDFrGHh4Ddc04KCHeUy3o+ZOo0o7D8jMijVo652hjKiA==", "username"=>"afzal"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "afzal"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "timelogs" ("login_time", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["login_time", "2016-11-19 15:58:05.323495"], ["user_id", 3], ["created_at", "2016-11-19 15:58:05.333300"], ["updated_at", "2016-11-19 15:58:05.333300"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/timelogs/1
+Completed 302 Found in 53ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/timelogs/1" for ::1 at 2016-11-19 21:28:05 +0530
+Processing by TimelogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTimelog Load (0.3ms)[0m  SELECT  "timelogs".* FROM "timelogs" WHERE "timelogs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" IS NULL LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :find_user rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 21:28:05 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 31ms (Views: 28.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SELECT "users"."name" FROM "users"
+
+
+Started POST "/timelogs" for ::1 at 2016-11-19 21:28:39 +0530
+Processing by TimelogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ezysk16mqlMuVQkpM4wPWTbl2vknhUmD6jpiXbvsDGM8c1rF7nZvwiNYKultTacWOWbNLLe6MEqGuDY7SD3ZQA==", "username"=>"ddd"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "ddd"]]
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.4ms)
+
+NameError (undefined local variable or method `sss' for #<TimelogsController:0x007fd7214a9070>):
+  app/controllers/timelogs_controller.rb:37:in `find_user'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (19.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (40.8ms)
+
+
+Started PUT "/__web_console/repl_sessions/3a0d2a0593da70c54fda58cc915d6366" for ::1 at 2016-11-19 21:28:45 +0530
+
+
+Started PUT "/__web_console/repl_sessions/3a0d2a0593da70c54fda58cc915d6366" for ::1 at 2016-11-19 21:28:54 +0530
+
+
+Started POST "/timelogs" for ::1 at 2016-11-19 21:29:04 +0530
+Processing by TimelogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ezysk16mqlMuVQkpM4wPWTbl2vknhUmD6jpiXbvsDGM8c1rF7nZvwiNYKultTacWOWbNLLe6MEqGuDY7SD3ZQA==", "username"=>"afzal"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "afzal"]]
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.5ms)
+
+NameError (undefined local variable or method `sss' for #<TimelogsController:0x007fd71abc64e0>):
+  app/controllers/timelogs_controller.rb:37:in `find_user'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (19.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (45.4ms)
+
+
+Started PUT "/__web_console/repl_sessions/c6b475194d8b63660bec7133afe62a4d" for ::1 at 2016-11-19 21:29:08 +0530
+
+
+Started PUT "/__web_console/repl_sessions/c6b475194d8b63660bec7133afe62a4d" for ::1 at 2016-11-19 21:29:12 +0530
+
+
+Started POST "/timelogs" for ::1 at 2016-11-19 21:29:23 +0530
+Processing by TimelogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ezysk16mqlMuVQkpM4wPWTbl2vknhUmD6jpiXbvsDGM8c1rF7nZvwiNYKultTacWOWbNLLe6MEqGuDY7SD3ZQA==", "username"=>"afzal"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "afzal"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "timelogs" ("login_time", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["login_time", "2016-11-19 15:59:23.987870"], ["user_id", 3], ["created_at", "2016-11-19 15:59:23.994101"], ["updated_at", "2016-11-19 15:59:23.994101"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/timelogs/2
+Completed 302 Found in 44ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/timelogs/2" for ::1 at 2016-11-19 21:29:24 +0530
+Processing by TimelogsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mTimelog Load (0.3ms)[0m  SELECT  "timelogs".* FROM "timelogs" WHERE "timelogs"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" IS NULL LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :find_user rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 21:29:24 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 43ms (Views: 41.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/timelogs" for ::1 at 2016-11-19 21:30:15 +0530
+Processing by TimelogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ViqpkfmV2tHJZ3WFv2yaArmaXfnjr7ALDffZESfgRjERZV/HSUUfQMRqVkXhrTJNthlKLHOQycJhdY131DGTEg==", "username"=>"afzal"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "afzal"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "timelogs" ("login_time", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["login_time", "2016-11-19 16:00:15.808013"], ["user_id", 3], ["created_at", "2016-11-19 16:00:15.814690"], ["updated_at", "2016-11-19 16:00:15.814690"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/timelogs/3
+Completed 302 Found in 29ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/timelogs/3" for ::1 at 2016-11-19 21:30:15 +0530
+Processing by TimelogsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTimelog Load (0.2ms)[0m  SELECT  "timelogs".* FROM "timelogs" WHERE "timelogs"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" IS NULL LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :find_user rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 21:30:15 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 37ms (Views: 35.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/timelogs" for ::1 at 2016-11-19 21:30:30 +0530
+Processing by TimelogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hmQphF4R3ZxGyD+ZfGyvULAUhWccjiX1vyXQADbZftfBK9/S7sEYDUvFHFkirQcfv5eSsoyxXDzTp4RmxQir9A==", "username"=>"afsdas"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "afsdas"]]
+Redirected to http://localhost:3000/
+Filter chain halted as :find_user rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 21:30:30 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (2.0ms)
+Completed 200 OK in 42ms (Views: 33.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/timelogs" for ::1 at 2016-11-19 21:30:33 +0530
+Processing by TimelogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hMeH9M2bh7HUtq5vzqnNlCSdqJd68NpTRww09mAGq2HDiHGifUtCINm7ja+QaGXbKx6/QurPo5orjmCQk9d+Qg==", "username"=>"afzal"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "afzal"]]
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.6ms)
+
+NameError (undefined local variable or method `sss' for #<TimelogsController:0x007fd71fe8e5b0>):
+  app/controllers/timelogs_controller.rb:13:in `create'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (23.9ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (45.9ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (22.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (43.5ms)
+
+
+Started PUT "/__web_console/repl_sessions/ec0243473ae2fdf0cc66310e4ab03402" for ::1 at 2016-11-19 21:30:47 +0530
+
+
+Started PUT "/__web_console/repl_sessions/ec0243473ae2fdf0cc66310e4ab03402" for ::1 at 2016-11-19 21:30:56 +0530
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "timelogs" ("login_time", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["login_time", "2016-11-19 16:00:33.560725"], ["user_id", 3], ["created_at", "2016-11-19 16:00:56.886043"], ["updated_at", "2016-11-19 16:00:56.886043"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+
+
+Started POST "/timelogs" for ::1 at 2016-11-19 21:33:30 +0530
+Processing by TimelogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hMeH9M2bh7HUtq5vzqnNlCSdqJd68NpTRww09mAGq2HDiHGifUtCINm7ja+QaGXbKx6/QurPo5orjmCQk9d+Qg==", "username"=>"afzal"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "afzal"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "timelogs" ("login_time", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["login_time", "2016-11-19 16:03:30.174495"], ["user_id", 3], ["created_at", "2016-11-19 16:03:30.181827"], ["updated_at", "2016-11-19 16:03:30.181827"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 44ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 21:33:30 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (5.6ms)
+Completed 200 OK in 49ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 21:33:48 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (6.2ms)
+Completed 200 OK in 44ms (Views: 42.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.css.map" for ::1 at 2016-11-19 21:33:56 +0530
+
+
+Started GET "/" for ::1 at 2016-11-19 21:34:10 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (7.1ms)
+Completed 200 OK in 64ms (Views: 61.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.self-511807f34f490c5d04f397a2ad4fc4a9135fcb5300f3dd5cb88f1cf678357cf3.css?body=1" for ::1 at 2016-11-19 21:34:11 +0530
+
+
+Started GET "/assets/landing.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-11-19 21:34:11 +0530
+
+
+Started GET "/assets/scaffolds.self-32f2b0321ef49c20c99e11dc3779b6820bb47adbe07eab4eed9fe2a221446c5e.css?body=1" for ::1 at 2016-11-19 21:34:11 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-11-19 21:34:11 +0530
+
+
+Started GET "/assets/bootstrap.min.self-504d59678f10d79a661b6cecdce5b8c1d5bfd98e860614584c0a40399552d61f.js?body=1" for ::1 at 2016-11-19 21:34:11 +0530
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-11-19 21:34:11 +0530
+
+
+Started GET "/assets/landing.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-11-19 21:34:11 +0530
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-11-19 21:34:11 +0530
+
+
+Started GET "/assets/timelogs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-11-19 21:34:11 +0530
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-11-19 21:34:11 +0530
+
+
+Started GET "/assets/timelogs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-11-19 21:34:11 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-11-19 21:34:11 +0530
+
+
+Started GET "/assets/bootstrap.min.css.map" for ::1 at 2016-11-19 21:34:11 +0530
+
+
+Started POST "/timelogs" for ::1 at 2016-11-19 21:34:15 +0530
+Processing by TimelogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eHd3S3K8w5T+ID2mDIoaLBaXbDzSD1qnBai/W096154/OIEdwmwGBfMtHmZSS7JjGRR76UIwI25pKus9vKsCvQ==", "username"=>"afzal"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "afzal"]]
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "timelogs" ("login_time", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["login_time", "2016-11-19 16:04:15.087223"], ["user_id", 3], ["created_at", "2016-11-19 16:04:15.089547"], ["updated_at", "2016-11-19 16:04:15.089547"]]
+  [1m[35m (2.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 21:34:15 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (2.2ms)
+Completed 200 OK in 38ms (Views: 36.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.css.map" for ::1 at 2016-11-19 21:34:15 +0530
+
+
+Started POST "/timelogs" for ::1 at 2016-11-19 21:34:48 +0530
+Processing by TimelogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8ZzthHmJseTnnI8TT4s0DX9Z2/rR5hyEh9aETzX12Hm20xvSyVl0deqRrNMRSpxCcNrML0HZZU3rVNApxiQNWg==", "username"=>"afzal"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "afzal"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "timelogs" ("login_time", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["login_time", "2016-11-19 16:04:48.701192"], ["user_id", 3], ["created_at", "2016-11-19 16:04:48.702137"], ["updated_at", "2016-11-19 16:04:48.702137"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 21:34:48 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (7.4ms)
+Completed 200 OK in 38ms (Views: 37.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.css.map" for ::1 at 2016-11-19 21:34:49 +0530
+
+
+Started GET "/" for ::1 at 2016-11-19 21:35:01 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (36.8ms)
+Completed 200 OK in 80ms (Views: 78.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.self-511807f34f490c5d04f397a2ad4fc4a9135fcb5300f3dd5cb88f1cf678357cf3.css?body=1" for ::1 at 2016-11-19 21:35:01 +0530
+
+
+Started GET "/assets/landing.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-11-19 21:35:01 +0530
+
+
+Started GET "/assets/scaffolds.self-32f2b0321ef49c20c99e11dc3779b6820bb47adbe07eab4eed9fe2a221446c5e.css?body=1" for ::1 at 2016-11-19 21:35:01 +0530
+
+
+Started GET "/assets/timelogs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-11-19 21:35:01 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-11-19 21:35:01 +0530
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-11-19 21:35:01 +0530
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-11-19 21:35:01 +0530
+
+
+Started GET "/assets/bootstrap.min.self-504d59678f10d79a661b6cecdce5b8c1d5bfd98e860614584c0a40399552d61f.js?body=1" for ::1 at 2016-11-19 21:35:01 +0530
+
+
+Started GET "/assets/landing.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-11-19 21:35:01 +0530
+
+
+Started GET "/assets/timelogs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-11-19 21:35:01 +0530
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-11-19 21:35:01 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-11-19 21:35:01 +0530
+
+
+Started GET "/assets/bootstrap.min.css.map" for ::1 at 2016-11-19 21:35:02 +0530
+
+
+Started POST "/timelogs" for ::1 at 2016-11-19 21:35:05 +0530
+Processing by TimelogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OeJBJWAHsjMFtopRjExVMhc7WNhvaFwLqkxIEIyFDK5+rbdz0Nd3ogi7qZHSjf19GLhPDf9XJcLGzhx2f1TZjQ==", "username"=>"afzal"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "afzal"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "timelogs" ("login_time", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["login_time", "2016-11-19 16:05:05.288157"], ["user_id", 3], ["created_at", "2016-11-19 16:05:05.289501"], ["updated_at", "2016-11-19 16:05:05.289501"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 21:35:05 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (2.5ms)
+Completed 200 OK in 47ms (Views: 46.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.css.map" for ::1 at 2016-11-19 21:35:05 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddIsLateToTimelogs (20161119160630)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "timelogs" ADD "is_late" boolean[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161119160630"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_name' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_name' AND type='index'
+[0m
+
+
+Started GET "/users/new" for ::1 at 2016-11-19 23:49:12 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.haml (2.9ms)
+  Rendered users/new.html.haml within layouts/application (5.3ms)
+Completed 200 OK in 54ms (Views: 42.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 23:49:14 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RkgaQy/OdfIXatp+Bu0cpAxNFp+oP2JTbqIWNa63j/0BB+wVnx6wYxpn+b5YLLTrA84BSjgAG5oCIEJTXWZa3g==", "user"=>{"name"=>""}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = '' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered landing/index.html.haml within layouts/application (7.2ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    26:       .panel-body
+    27:         =link_to "Create new User", new_users_path, class: "btn btn-primary"
+    28:         %hr
+    29:         = form_for(@timelog, class: "form-inline") do |f|
+    30:           = text_field_tag "username", nil, class: "form-control", placeholder: "User name to log in", required: true
+  app/views/landing/index.html.haml:29:in `_app_views_landing_index_html_haml___789918089824546985_70280975992620'
+  app/controllers/users_controller.rb:17:in `block (2 levels) in create'
+  app/controllers/users_controller.rb:12:in `create'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (27.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (19.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (41.4ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 23:49:29 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RkgaQy/OdfIXatp+Bu0cpAxNFp+oP2JTbqIWNa63j/0BB+wVnx6wYxpn+b5YLLTrA84BSjgAG5oCIEJTXWZa3g==", "user"=>{"name"=>""}, "commit"=>"Save"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = '' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered landing/index.html.haml within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    26:       .panel-body
+    27:         =link_to "Create new User", new_users_path, class: "btn btn-primary"
+    28:         %hr
+    29:         = form_for(@timelog, class: "form-inline") do |f|
+    30:           = text_field_tag "username", nil, class: "form-control", placeholder: "User name to log in", required: true
+  app/views/landing/index.html.haml:29:in `_app_views_landing_index_html_haml___789918089824546985_70280975992620'
+  app/controllers/users_controller.rb:17:in `block (2 levels) in create'
+  app/controllers/users_controller.rb:12:in `create'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.0ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.1ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (31.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-19 23:49:41 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 26ms (Views: 20.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.min.css.map" for ::1 at 2016-11-19 23:49:42 +0530
+
+
+Started GET "/users/new" for ::1 at 2016-11-19 23:49:43 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.haml (0.9ms)
+  Rendered users/new.html.haml within layouts/application (2.0ms)
+Completed 200 OK in 32ms (Views: 30.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 23:49:45 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SfH9TmSWn7kPUZw75CSQhKxj5Lkgr2RIoog8MDkwhZoOvgsY1EZaKAJcv/u65TjLo+DzbLCQHYHOCmhWyuFQuQ==", "user"=>{"name"=>""}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = '' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered landing/index.html.haml within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    26:       .panel-body
+    27:         =link_to "Create new User", new_users_path, class: "btn btn-primary"
+    28:         %hr
+    29:         = form_for(@timelog, class: "form-inline") do |f|
+    30:           = text_field_tag "username", nil, class: "form-control", placeholder: "User name to log in", required: true
+  app/views/landing/index.html.haml:29:in `_app_views_landing_index_html_haml___789918089824546985_70280975992620'
+  app/controllers/users_controller.rb:17:in `block (2 levels) in create'
+  app/controllers/users_controller.rb:12:in `create'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (14.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (30.0ms)
+
+
+Started PUT "/__web_console/repl_sessions/4099c666072f690636693fc68e2d3422" for ::1 at 2016-11-19 23:50:02 +0530
+
+
+Started PUT "/__web_console/repl_sessions/4099c666072f690636693fc68e2d3422" for ::1 at 2016-11-19 23:50:13 +0530
+
+
+Started POST "/users" for ::1 at 2016-11-19 23:51:12 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SfH9TmSWn7kPUZw75CSQhKxj5Lkgr2RIoog8MDkwhZoOvgsY1EZaKAJcv/u65TjLo+DzbLCQHYHOCmhWyuFQuQ==", "user"=>{"name"=>""}, "commit"=>"Save"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = '' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered landing/index.html.haml within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.8ms)
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    26:       .panel-body
+    27:         =link_to "Create new User", new_users_path, class: "btn btn-primary"
+    28:         %hr
+    29:         = form_for(@timelog, class: "form-inline") do |f|
+    30:           = text_field_tag "username", nil, class: "form-control", placeholder: "User name to log in", required: true
+  app/views/landing/index.html.haml:29:in `_app_views_landing_index_html_haml___789918089824546985_70280975992620'
+  app/controllers/users_controller.rb:17:in `block (2 levels) in create'
+  app/controllers/users_controller.rb:12:in `create'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.2ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (14.9ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (31.4ms)
+
+
+Started POST "/users" for ::1 at 2016-11-19 23:54:04 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SfH9TmSWn7kPUZw75CSQhKxj5Lkgr2RIoog8MDkwhZoOvgsY1EZaKAJcv/u65TjLo+DzbLCQHYHOCmhWyuFQuQ==", "user"=>{"name"=>""}, "commit"=>"Save"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = '' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered landing/index.html.haml within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.6ms)
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    26:       .panel-body
+    27:         =link_to "Create new User", new_users_path, class: "btn btn-primary"
+    28:         %hr
+    29:         = form_for(@timelog, class: "form-inline") do |f|
+    30:           = text_field_tag "username", nil, class: "form-control", placeholder: "User name to log in", required: true
+  app/views/landing/index.html.haml:29:in `_app_views_landing_index_html_haml___789918089824546985_70280975992620'
+  app/controllers/users_controller.rb:17:in `block (2 levels) in create'
+  app/controllers/users_controller.rb:12:in `create'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (36.2ms)
+
+
+Started PUT "/__web_console/repl_sessions/07bfc8913e99b22b3a12f87029bbeb98" for ::1 at 2016-11-19 23:54:22 +0530
+
+
+Started PUT "/__web_console/repl_sessions/07bfc8913e99b22b3a12f87029bbeb98" for ::1 at 2016-11-19 23:54:41 +0530
+
+
+Started POST "/users" for ::1 at 2016-11-19 23:56:43 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SfH9TmSWn7kPUZw75CSQhKxj5Lkgr2RIoog8MDkwhZoOvgsY1EZaKAJcv/u65TjLo+DzbLCQHYHOCmhWyuFQuQ==", "user"=>{"name"=>""}, "commit"=>"Save"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = '' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered landing/index.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 43ms (Views: 26.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/scaffolds.self-32f2b0321ef49c20c99e11dc3779b6820bb47adbe07eab4eed9fe2a221446c5e.css?body=1" for ::1 at 2016-11-19 23:56:43 +0530
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-11-19 23:56:43 +0530
+
+
+Started GET "/assets/timelogs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-11-19 23:56:43 +0530
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-11-19 23:56:43 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-11-19 23:56:43 +0530
+
+
+Started GET "/assets/landing.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-11-19 23:56:43 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-11-19 23:56:43 +0530
+
+
+Started GET "/assets/bootstrap.min.self-504d59678f10d79a661b6cecdce5b8c1d5bfd98e860614584c0a40399552d61f.js?body=1" for ::1 at 2016-11-19 23:56:43 +0530
+
+
+Started GET "/assets/timelogs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-11-19 23:56:43 +0530
+
+
+Started GET "/assets/landing.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-11-19 23:56:43 +0530
+
+
+Started GET "/assets/bootstrap.min.css.map" for ::1 at 2016-11-19 23:56:43 +0530
+  [1m[36mTimelog Load (0.5ms)[0m  [1mSELECT  "timelogs".* FROM "timelogs"  ORDER BY "timelogs"."id" ASC LIMIT 1[0m
+  [1m[35mTimelog Load (0.2ms)[0m  SELECT  "timelogs".* FROM "timelogs"  ORDER BY "timelogs"."id" DESC LIMIT 1
+
+
+Started POST "/timelogs" for ::1 at 2016-11-20 14:34:36 +0530
+Processing by TimelogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1UJFtPpj69edxoyRtxGIMqnHlTqbjic0dB/rx74IL36SDbPiSrMuRpDLr1Hp0CB9pkSC7wuxXv0Ynb+hTdn6XQ==", "username"=>"afzal"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1  [["name", "afzal"]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "timelogs" ("login_time", "user_id", "is_late", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["login_time", "2016-11-20 09:04:37.112045"], ["user_id", 3], ["is_late", "t"], ["created_at", "2016-11-20 09:04:37.123934"], ["updated_at", "2016-11-20 09:04:37.123934"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  Rendered landing/index.html.haml within layouts/application (4.2ms)
+Completed 200 OK in 96ms (Views: 42.9ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/bootstrap.min.css.map" for ::1 at 2016-11-20 14:34:37 +0530
+  [1m[36mTimelog Load (0.2ms)[0m  [1mSELECT  "timelogs".* FROM "timelogs"  ORDER BY "timelogs"."id" DESC LIMIT 1[0m
+
+
+Started GET "/timelogs" for ::1 at 2016-11-20 14:38:42 +0530
+Processing by TimelogsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."name" IS NULL LIMIT 1
+Redirected to http://localhost:3000/users
+Filter chain halted as :find_user rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2016-11-20 14:38:42 +0530
+
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController):
+  actionpack (4.2.5) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `call'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.5) lib/rack/etag.rb:24:in `call'
+  rack (1.6.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.5) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Afzal/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Afzal/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Afzal/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.9ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (35.1ms)
+
+
+Started GET "/landing" for ::1 at 2016-11-20 14:38:54 +0530
+
+ActionController::RoutingError (No route matches [GET] "/landing"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Afzal/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Afzal/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Afzal/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.5ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (8.2ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (42.8ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (13.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (27.6ms)
+
+
+Started GET "/landing" for ::1 at 2016-11-20 14:38:54 +0530
+
+ActionController::RoutingError (No route matches [GET] "/landing"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Afzal/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Afzal/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Afzal/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (26.1ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Afzal/.rvm/gems/ruby-2.1.5/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (31.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-20 14:39:04 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (5.8ms)
+Completed 200 OK in 28ms (Views: 26.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.css.map" for ::1 at 2016-11-20 14:39:05 +0530
+
+
+Started GET "/" for ::1 at 2016-11-20 14:39:14 +0530
+Processing by LandingController#index as HTML
+  Rendered landing/index.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.css.map" for ::1 at 2016-11-20 14:39:15 +0530
+
+
+Started POST "/timelogs" for ::1 at 2016-11-20 14:39:18 +0530
+Processing by TimelogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZpA+8GgPbvB4V0gcsBK2mL86ZjJR6sYrfPohQxQOC9ch38im2N+rYXVaa9zu0x7XsLlx58HVv+IQeHUl59/e9A==", "username"=>"afzal"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT 1[0m  [["name", "afzal"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "timelogs" ("login_time", "user_id", "is_late", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["login_time", "2016-11-20 09:09:18.772854"], ["user_id", 3], ["is_late", "t"], ["created_at", "2016-11-20 09:09:18.773731"], ["updated_at", "2016-11-20 09:09:18.773731"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  Rendered landing/index.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 26ms (Views: 21.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/bootstrap.min.css.map" for ::1 at 2016-11-20 14:39:19 +0530
