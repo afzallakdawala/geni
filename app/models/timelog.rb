@@ -7,12 +7,15 @@ class Timelog < ActiveRecord::Base
     where("DATE(created_at) = ?", Date.today).where(is_late: true).count
   end
 
-  def self.avg_late_users
+  def self.user_stats(user_id)
+    {avg_time: Timelog.select("time(avg(time(strftime('%s',login_time)))) as average_time").where(user_id: user_id).first.average_time}
+  end
+  def self.avg_time
     Timelog.select("time(avg(time(strftime('%s',login_time)))) as average_time").first.average_time
   end
 
   def self.stats
-    {nos_of_late_users_today: nos_of_late_users_today, avg_late_users: avg_late_users}
+    {nos_of_late_users_today: nos_of_late_users_today, avg_time: avg_time}
   end
 
   private

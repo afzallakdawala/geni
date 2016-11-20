@@ -9,7 +9,7 @@
       .pull-right  
         %strong
           Average time for all users
-        %span.badge=@stats[:avg_late_users]
+        %span.badge=@stats[:avg_time]
 
 
 %table.table.table-bordered
@@ -21,9 +21,9 @@
 
   -@timelogs.each do |timelog|
     %tr{class: "#{(timelog.is_late) ? 'danger' : ''}"}
-      %td=timelog.username
+      %td=link_to timelog.username, user_dashboard_path(timelog.user_id)
       %td=timelog.login_time.strftime("%H:%M")
       %td=timelog.login_time.strftime("%d-%b-%y")
-      %td=link_to "Destroy", users_path(timelog.user.id), method: :delete, data: {confirm: "Are you sure?"}
+      %td=link_to "Destroy", users_path(timelog.user_id), method: :delete, data: {confirm: "Are you sure?"}
 
 = will_paginate @timelogs
