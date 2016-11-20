@@ -1,11 +1,13 @@
 class Timelog < ActiveRecord::Base
   belongs_to :user
   validate :validate_per_day
-  before_save :mark_is_late
+  before_save :mark_is_late_and_login_time
   
   private
-  def mark_is_late
-    self.is_late = self.login_time.strftime("%H%M").to_i <= 1000
+  def mark_is_late_and_login_time
+    t = Time.now
+    self.is_late = t.strftime("%H%M").to_i > 1000
+    self.login_time = t
   end
   
   def validate_per_day

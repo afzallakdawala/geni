@@ -3,7 +3,7 @@ class TimelogsController < ApplicationController
   before_action :find_user
   # GET /timelogs/new
   def new
-    @timelog = Timelog.new
+    @timelog ||= Timelog.new
   end
 
   # POST /timelogs
@@ -12,12 +12,10 @@ class TimelogsController < ApplicationController
     @timelog = @user.timelogs.build(timelog_params)
     respond_to do |format|
       if @timelog.save
-        flash_error
-        format.html { redirect_to :back}
+        format.html { redirect_to root_url, flash: flash_error}
         format.json { render :show, status: :created, location: @timelog }
       else
-        base_error
-        format.html { redirect_to :back}
+        format.html { redirect_to root_url, flash: base_error}
         format.json { render json: @timelog.errors, status: :unprocessable_entity }
       end
     end
@@ -31,7 +29,7 @@ class TimelogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def timelog_params
-      params.fetch(:timelog, {}).permit(:user_id, :login_time).merge({user_id: @user_id, login_time: Time.now})
+      params.fetch(:timelog, {}).permit(:user_id, :login_time).merge({user_id: @user_id})
     end
 
     def find_user
@@ -42,15 +40,12 @@ class TimelogsController < ApplicationController
     end
 
     def flash_error
-      if @timelog.is_late
-        flash[:error] = "Hey you are late."
-      else
-        flash[:notice] = "Wow you are on time."
-      end
+      return {error: "Hey you are late."} if @timelog.is_late
+      return {notice: "Wow you are on time."}
     end
 
     def base_error
       error = @timelog.errors
-      flash[:error] = error[:base].first if error && error[:base]
+      return {error: error[:base].first} if error && error[:base]
     end
 end
