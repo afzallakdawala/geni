@@ -29,7 +29,7 @@ class TimelogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def timelog_params
-      params.fetch(:timelog, {}).permit(:user_id, :login_time).merge({user_id: @user_id, login_time: Time.zone.now})
+      params.fetch(:timelog, {}).permit(:user_id, :login_time).merge({user_id: @user_id, login_time: Time.now})
     end
 
     def find_user
